@@ -29,6 +29,10 @@ function SimulatorViewModel() {
             members: [ 'it-venice' ]
         },
         {
+            name: 'es',
+            members: [ 'es-empuria' ]
+        },
+        {
             name: 'us',
             members: [ 'us-lodi', 'us-elsinore', 'us-skydance', 'us-eloy', 'us-perris', 'us-chicago', 'us-statue-of-liberty' ]
         },
