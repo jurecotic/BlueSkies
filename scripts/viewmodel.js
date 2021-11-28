@@ -4,6 +4,7 @@ function SimulatorViewModel() {
     var self = this;
     var dropzones = {
         "uk-sibson": [52.560706, -0.395692],
+        "si-sticna": [45.94124308458961, 14.853357442519796],
         "uk-chatteris": [52.48866, 0.086044],
         "ru-puschino": [54.790046, 37.642547],
         "ru-kolomna": [55.091914, 38.917231],
@@ -24,6 +25,10 @@ function SimulatorViewModel() {
         {
             name: 'uk',
             members: [ 'uk-sibson', 'uk-chatteris' ]
+        },
+        {
+            name: 'si',
+            members: [ 'si-sticna', 'uk-chatteris' ]
         },
         {
             name: 'ru',
@@ -247,7 +252,7 @@ function SimulatorViewModel() {
         }, this, { deferEvaluation: true })
     };
 
-    self.location.id("uk-sibson");
+    self.location.id("si-sticna");
 
     self.reachSetAltitude = ko.computed(function() {
         return self.simulation.flying() ? self.canopy.altitude() : self.pattern.openingAltitude();

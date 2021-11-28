@@ -10,10 +10,14 @@ var enResources = {
         "share-link": "Get link to current location",
 
         "uk": "UK",
+        "si": "Slovenia",
+        "it": "Italy"
+        "es": "Spain"
         "ru": "Russia",
         "us": "United States",
         "other": "Other",
 
+        "si-sticna": "Šentvid pri Stični"
         "uk-sibson": "Sibson",
         "uk-chatteris": "Chatteris",
         "ru-puschino": "Puschino",
