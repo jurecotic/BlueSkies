@@ -3,12 +3,10 @@
 function SimulatorViewModel() {
     var self = this;
     var dropzones = {
-        "uk-sibson": [52.560706, -0.395692],
         "si-sticna": [45.94124308458961, 14.853357442519796],
-        "uk-chatteris": [52.48866, 0.086044],
-        "ru-puschino": [54.790046, 37.642547],
-        "ru-kolomna": [55.091914, 38.917231],
-        "ru-vatulino": [55.663505, 36.142181],
+        "si-bovec": [46.33087570832793, 13.552239083733248],
+        "it-venice": [45.69926612892522, 12.763687696990164],
+        "es-empuria":[42.26007927137759, 3.1107708555605003],
         "other-dubai": [25.090282, 55.135681],
         "other-red-square": [55.754216, 37.620083],
         "us-lodi": [38.199366, -121.264474],
@@ -23,16 +21,12 @@ function SimulatorViewModel() {
 
     self.dzMenu = [
         {
-            name: 'uk',
-            members: [ 'uk-sibson', 'uk-chatteris' ]
-        },
-        {
             name: 'si',
-            members: [ 'si-sticna', 'uk-chatteris' ]
+            members: [ 'si-sticna', 'si-bovec' ]
         },
         {
-            name: 'ru',
-            members: [ 'ru-puschino', 'ru-vatulino', 'ru-kolomna' ],
+            name: 'it',
+            members: [ 'it-venice' ]
         },
         {
             name: 'us',
