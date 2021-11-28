@@ -11,7 +11,6 @@ function startTutor(id) {
         if (nextDialogIndex < allDialogs.size()) {
             if (nextDialogIndex == allDialogs.size() - 1) {
                 sim.misc.tutorFinished(true);
-                ga('send', 'event', 'tutor', 'finished', {'nonInteraction': true});
             }
 
             allDialogs.eq(nextDialogIndex).dialog("open");
@@ -39,7 +38,6 @@ function startTutor(id) {
             text: localize("Skip tutor"),
             click: function() {
                 nextDialogIndex = allDialogs.size() - 1;
-                ga('send', 'event', 'tutor', 'skiptutor');
                 $(this).dialog("close");
             }
         }
@@ -134,7 +132,6 @@ function startTutor(id) {
     nextDialog();
 
     $(".tutor-button").click(function() {
-        ga('send', 'event', 'tutor', 'restart');
         nextDialogIndex = 0;
         var visible = allDialogs.filter(function() { return $(this).dialog("isOpen") }).dialog("close");
         if (visible.size() == 0) {

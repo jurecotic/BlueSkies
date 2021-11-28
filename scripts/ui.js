@@ -143,9 +143,6 @@ function onTimeTick() {
 
         if (!sim.simulation.flying()) {
             var distance = google.maps.geometry.spherical.computeDistanceBetween(sim.canopy.location(), sim.location.coords());
-            ga('send', 'event', 'simulation', 'finished');
-            ga('send', 'event', 'simulation', 'finished', 'distance', Math.floor(distance));
-            ga('send', 'event', 'simulation', 'finished', 'angle-into-wind', Math.floor(radToDeg(normalizeAngle(Math.abs(sim.canopy.heading() - normalizeAngle(sim.wind.direction() - Math.PI))))));
         }
     }
 }
@@ -190,7 +187,6 @@ function onDzMenuItemSelected(event, ui) {
     event.preventDefault();
     var dzid = ui.item.data('dz-id');
     if (dzid) {
-        ga('send', 'event', 'dz', 'selected', dzid);
         sim.location.id(dzid);
     }
 }
@@ -198,11 +194,9 @@ function onDzMenuItemSelected(event, ui) {
 function onFindNewDz() {
     var place = this.getPlace();
     if (!place.geometry) {
-        ga('send', 'event', 'dz', 'autocomplete', 'failed');
         return;
     }
 
-    ga('send', 'event', 'dz', 'autocomplete', 'success');
     setCustomDz(place.formatted_address, place.geometry.location);
 }
 
@@ -416,20 +410,7 @@ function initReachSets() {
     bindCircles(createReachSetCircles('#0000FF'), sim.analytics.controlSet);
 }
 
-function initializeAnalyticsEvents() {
-    $(".legend-button").click(function() {
-        ga('send', 'event', 'button', 'click', 'legend');
-    });
 
-    google.maps.event.addListener(map, "rightclick", function() {
-        ga('send', 'event', 'simulation', 'started');
-        ga('send', 'event', 'simulation', 'started', 'altitude', sim.pattern.openingAltitude());
-    });
-
-    $("input").change(function() {
-        ga('send', 'event', 'button', 'click', $(this).attr("id"));
-    });
-}
 
 function initialize() {
     initLandingPattern();
@@ -444,7 +425,6 @@ function initialize() {
         .keyup(onKeyUp);
     window.setInterval(onTimeTick, updateInterval);
 
-    initializeAnalyticsEvents();
 }
 
 $(document).ready(initialize);
