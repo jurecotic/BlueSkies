@@ -11,13 +11,13 @@ var enResources = {
 
         "uk": "UK",
         "si": "Slovenia",
-        "it": "Italy"
-        "es": "Spain"
+        "it": "Italy",
+        "es": "Spain",
         "ru": "Russia",
         "us": "United States",
         "other": "Other",
 
-        "si-sticna": "Šentvid pri Stični"
+        "si-sticna": "Šentvid pri Stični",
         "uk-sibson": "Sibson",
         "uk-chatteris": "Chatteris",
         "ru-puschino": "Puschino",
